@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  yolo:
+    image: ultralytics/ultralytics:latest
+    command: sleep infinity
+    volumes:
+      - ./datasets:/workspace/datasets
+      - ./models:/workspace/models
+      - ./src:/workspace/src
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    working_dir: /workspace/src
+  api:
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - "3500:4000"
+    volumes:
+      - ./src:/app
+      - ./models:/app/models
+    environment:
+      - MODEL_DIR=/app/models
+    depends_on:
+      - yolo
