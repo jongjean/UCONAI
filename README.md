@@ -24,17 +24,29 @@
 ## 🧩 프로젝트 구조
 
 /home/ucon/gonggu-ai/
-├── src/
-│   ├── train_yolo.py        # YOLO 학습 스크립트
-│   ├── detect_yolo.py       # 추론 테스트
+
+├── src/ 
+
+│   ├── train_yolo.py        # YOLO 학습 스크립트 
+
+│   ├── detect_yolo.py       # 추론 테스트 
+
 │   ├── api_server.py        # FastAPI 추론 서버
+
 │   ├── data_prep.py         # 데이터셋 전처리/DB 등록
+
 │   └── utils.py             # 공통 유틸 함수
+
 ├── datasets/                # 학습용 이미지 및 라벨
+
 ├── models/                  # 학습된 모델 가중치(.pt / .onnx)
+
 ├── notebooks/               # 분석/시각화용 Jupyter 노트북
+
 ├── docker-compose.yml       # GPU 컨테이너 실행 설정
+
 ├── requirements.txt         # Python 의존성 목록
+
 └── README.md
 
 ---
