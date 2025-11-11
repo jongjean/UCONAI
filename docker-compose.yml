@@ -12,10 +12,10 @@ services:
     working_dir: /workspace/src
   api:
     build:
-      context: ./src
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: src/Dockerfile
     ports:
-      - "3500:4000"
+      - "3500:3500"
     volumes:
       - ./src:/app
       - ./models:/app/models
